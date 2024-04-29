@@ -8,7 +8,6 @@ const http = server.createServer(app);
 const cors = require("cors");
 const path = require("path");
 app.use(cors());
-
 app.use(express.json());
 const port =  3000;
  app.use(express.static(path.join(__dirname, '../frontend/build')));
@@ -24,7 +23,7 @@ const port =  3000;
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './frontend/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
 router.post('/mail',(request,response)=>{

@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 const server = require('http')
@@ -14,8 +14,8 @@ const port =  3000;
  app.use(express.static(path.join(__dirname, '../frontend/build')));
 // console.log(express.static(path.join(__dirname, './frontend/build')))
 
-app.use('/.netlify/function/api',router);
-module.exports.handler = serverless(app);
+// app.use('/.netlify/function/api',router);
+// module.exports.handler = serverless(app);
 // // Define your API routes
 // app.use('/', (req, res) => {
 //   // Your API logic here

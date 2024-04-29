@@ -11,8 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 const port =  3000;
-app.use(express.static(path.join(__dirname, './frontend/build')));
-console.log(express.static(path.join(__dirname, './frontend/build')))
+ app.use(express.static(path.join(__dirname, '../frontend/build')));
+// console.log(express.static(path.join(__dirname, './frontend/build')))
 
 app.use('/.netlify/function/api',router);
 module.exports.handler = serverless(app);

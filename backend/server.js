@@ -10,7 +10,8 @@ const path = require("path");
 app.use(cors());
 app.use(express.json());
 const port =  3000;
- app.use(express.static(path.join(__dirname, '../frontend/build')));
+console.log(__dirname) 
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 // console.log(express.static(path.join(__dirname, './frontend/build')))
 
 // app.use('/.netlify/function/api',router);
@@ -23,7 +24,7 @@ const port =  3000;
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/build'));
 });
 
 router.post('/mail',(request,response)=>{

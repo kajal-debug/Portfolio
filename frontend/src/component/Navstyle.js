@@ -136,9 +136,9 @@ export const MobileIcon = styled.div`
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 75px;
     transform: translate(-100%, 60%);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
   }

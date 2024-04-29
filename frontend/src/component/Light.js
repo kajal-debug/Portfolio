@@ -10,7 +10,7 @@ const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
     // Styles for FormControlLabel...
     "&.changeColor": {
       position: "fixed",
-      top: "10px",
+      top: "4px",
       right: "0%",
       zIndex: 11,
       "@media screen and (max-width: 1296px)" :{

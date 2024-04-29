@@ -28,6 +28,19 @@ const Wrapper = styled.div`
 function App() {
   const {state} = GlobalConsumer();
   const[scroll,setScroll]=useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY >750);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   // useEffect(()=>{
    
   //   //  setScroll(scrollRef.current)
@@ -66,8 +79,11 @@ console.log("state.scroll scrollToProjects",state.scroll)
   //   return prevScroll;
   // });
   };
+ 
+
   console.log(state.light,"state from context")
   const scrollToTop = () => {
+    
     // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // window.location.href = '../';
@@ -102,7 +118,7 @@ console.log("state.scroll scrollToProjects",state.scroll)
          </Wrapper>  
     </Router> 
          </Body> 
-    <UpArrow   onClick={scrollToTop}/>
+         {visible?  <UpArrow   onClick={scrollToTop}/>:""}
 
    </ThemeProvider> 
   );

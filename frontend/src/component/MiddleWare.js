@@ -16,5 +16,5 @@ const apiMiddleware = async (url, options,Mail) => {
 // 3. Configure API Routes
 
 export const getMessages = (msg,email,Mail) => {
-  return apiMiddleware(`http://127.0.0.1:3000/api/mail`,{msg:msg,email:email},Mail);
+  return apiMiddleware(`https://portfolio-u2w0.onrender.com/api/mail`,{msg:msg,email:email},Mail);
 };

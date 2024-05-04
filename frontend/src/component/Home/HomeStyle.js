@@ -18,6 +18,29 @@ export const HomeContainer = styled.div`
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+export const Download = styled.div`
+display:flex;
+gap:10px;
+.cloudDwn{
+  position: relative;
+  color:#d0a1bc;
+font-size:40px;
+text-align:center;
+ margin:10px;
+ cursor:pointer;
+ &:hover {
+  transform: scale(1.05);
+transition: all 0.4s ease-in-out;
+box-shadow:  20px 20px 60px #1F2634,
+filter: brightness(1);
+}  
+
+}
+@media (max-width:780px) {
+  display:block;
+  text-align:center;
+}
+`
 
 export const HomeBg = styled.div`
   position: absolute;
@@ -174,7 +197,7 @@ export const Resumebutton= styled.a`
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    text-decoration: none;
+    // text-decoration: none;
     width: 95%;
     max-width: 300px;
     text-align: center;

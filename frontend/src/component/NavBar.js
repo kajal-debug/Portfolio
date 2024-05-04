@@ -47,14 +47,9 @@ function NavBar() {
                  to="#project">Project</Link>
                  <Link className='mobileMenuLink' onClick={()=>{setOpen(!open)}}
                  to="#contact">Contact</Link>
-                <GithubButton
-                style={{
-                  padding:"10px 16px",
-                  background:`${theme.primary}`,
-                  color:"white",
-                  width:"max-content"
-                }}
-                to={Bio.github} >Github Profile</GithubButton>
+                <Link className='mobileMenuLink'
+              
+                to={Bio.github} >Github Profile</Link>
             </MobileMenu>
           ) 
         }

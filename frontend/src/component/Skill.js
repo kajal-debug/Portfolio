@@ -22,13 +22,14 @@ function Skill() {
             <SkillTitle>
               {item.title}
             </SkillTitle>
-
+         
              {
               item.skills.map((items)=>{
+                
                 return  <SkillList>
-                 <SkillImage src={items.image}/>
-               <div>{items.name}</div>
-               <div>{ items.StarRating? items.StarRating:""}</div>
+                 <SkillImage src={items.image}  disabled/>
+               <SkillItem>{items.name}</SkillItem >
+               <div disabled>{ items.StarRating? items.StarRating:""}</div>
                </SkillList>
               })
              }   

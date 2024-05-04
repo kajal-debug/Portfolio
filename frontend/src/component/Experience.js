@@ -28,7 +28,7 @@ function Experience() {
            { experiences.map((experience,index)=>{
          return   <TimelineItem>
              <TimelineSeparator>
-              <Dot variant='outlined'/>
+              <Dot style={{marginTop:"20px"}} variant='outlined'/>
               {index !== experiences.length-1 && <TimelineConnector/>}
                 </TimelineSeparator>
 
@@ -36,16 +36,13 @@ function Experience() {
              <Card>
             <Top>
                 <Body>
-                    <Role>{experience.role}</Role>
                     <Company>{experience.company}</Company>
                     <Date>{experience.date}</Date>
+                    <Role>{experience.role}</Role>
                 </Body>
             </Top>
             <Description>
-                {experience?.desc &&
-                    <Span>{experience?.desc}</Span>
-
-                }
+              
                 {experience?.skills &&
                     <>
                         <br />

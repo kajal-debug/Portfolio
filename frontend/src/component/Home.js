@@ -10,12 +10,8 @@ import Tooltip from '@mui/material/Tooltip';
 
 function Home() {
   const [tooltip,setTooltip]=React.useState(false);
-  React.useEffect(()=>{
-    setTooltip(false)
-    console.log("hii")
-  },[tooltip])
   const HandleDownload=async()=>{
-    const cv = 'http://localhost:3000/KajalBaisakh_resume.pdf';
+    const cv = './KajalBaisakh_resume.pdf';
   try {
     const response = await axios.head(cv);
     const contentLength = parseInt(response.headers['content-length'], 10);
@@ -74,8 +70,10 @@ function Home() {
      
       <Download >
       <Resumebutton href={Bio.resume} target='_blank'>OpenCV</Resumebutton>
-      <Tooltip  sx open={tooltip} title="Download CV" placement="bottom" arrow disableInteractive >  
-       <DownloadIcon className='cloudDwn' onMouseOver={()=>setTooltip(true)} onMouseLeave={()=>setTooltip(false)}  onClick={HandleDownload} />
+      <Tooltip  open={tooltip} title="Download CV" placement="bottom" arrow disableInteractive >  
+       <DownloadIcon className='cloudDwn' onMouseEnter={()=>setTooltip(true)}
+       onTouchStart={()=>setTooltip(true)} onTouchEnd ={()=>setTooltip(false)}
+       onMouseLeave={()=>setTooltip(false)}  onClick={HandleDownload} />
        </Tooltip>
       </Download> 
     </HomeLeftContainer>

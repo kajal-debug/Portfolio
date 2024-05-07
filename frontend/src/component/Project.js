@@ -152,7 +152,9 @@ const Project =forwardRef((props,projectRef) => {
                     
                     <Tags>
                         {project?.tags.map((tag) => (
-                            <Tag>{tag}</Tag>
+                            <Tag onClick={(event) => {
+                              event.preventDefault()
+                            }}>{tag}</Tag>
                         ))}
                     </Tags>
                     <Date>{project.date}</Date>

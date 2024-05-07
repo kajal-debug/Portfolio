@@ -62,13 +62,17 @@ export const TimelineSection = styled.div`
 `;
 export const Document = styled.img`
     height: 70px;
-    width: fit-content;
+    //  width: fit-content;
+    width:100%;
+     object-fit: cover;
     background-color: #000;
     border-radius: 10px;
+    display: inline-block;
     &:hover{
         cursor: pointer;
         opacity: 0.8;
     }
+      
 `
 export const TextContainer = styled.div`
     position: absolute;
@@ -97,13 +101,21 @@ export const Documents = styled.div`
 display:flex;
 gap: 20px;
  position:relative;
-  display: flex; 
+  display:inline-block; 
 &:hover ${TextContainer} {
     visibility: visible;
     opacity: 1;
   }
   &:hover ${Document} {
    height:80px;
+   display: inline-block;
+   @media not all and (min-resolution:.001dpcm) {
+    @media {
+        .safari_only {
+            width: 20%;
+        }
+    }
+}
   }
   .text{
     color:white;
@@ -191,18 +203,18 @@ export const Body = styled.div`
 
 
 export const Role = styled.div`
-    font-size: 18px;
-    font-weight: 600;
-    color: ${({ theme }) => theme.text_primary + 99};
+    font-size: 16px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.text_secondary + 99};
     @media only screen and (max-width: 768px){
         font-size: 14px;
     }
 `
 
 export const Company = styled.div`
-    font-size: 14px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    font-size: 18px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text_primary + 99};
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }

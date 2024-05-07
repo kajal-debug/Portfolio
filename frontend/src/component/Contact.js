@@ -30,6 +30,7 @@ const Contact = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const[disable,setDisable]=useState(false);
   const [tooltip,setTooltip]=useState(false);
+  const [tooltipEmail,setTooltipEmail]=useState(false);
   const[Progress,setProgress]=useState(false);
 
     useEffect(() => {
@@ -61,11 +62,10 @@ const Contact = () => {
 
     const handleClick = (e) => {
       e.preventDefault();
-      // const emailLink = `mailto:kajalbaisakh123@gmail.com`
-       const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kajalbaisakh123@gmail.com`;
+      const emailLink = `mailto:kajalbaisakh123@gmail.com`
+      //  const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kajalbaisakh123@gmail.com`;
       window.open(emailLink, '_blank');
     };
-
     useEffect((delay=2000) => {
       // setOpen(false);
       const errorMessage = validateEmailRegex(email);
@@ -164,19 +164,26 @@ const handleDisabledButtonClick = (e) => {
        <ContactTitle>Get in Touch</ContactTitle>
         <Icon><div><PermPhoneMsgIcon/></div>+91-7008478853</Icon>
         <Icon><div><LocationCityIcon/></div>Pune</Icon>
-        <Icon><div><AlternateEmailIcon/></div><span onClick={handleClick}>kajalbaisakh123@gmail.com</span></Icon>
+        <Tooltip  open={tooltipEmail}  title="Alternative Mail ID" arrow>
+        <Icon> 
+          <div><AlternateEmailIcon /></div>
+          <span onMouseEnter={()=>setTooltipEmail(true)}
+       onTouchStart={()=>setTooltipEmail(true)} onTouchEnd ={()=>setTooltipEmail(false)}
+       onMouseLeave={()=>setTooltipEmail(false)}>kajalbaisakh123@gmail.com</span> </Icon></Tooltip>
        </Details>
         {/* <Desc>Feel free to reach out to me for any questions or opportunities!</Desc> */}
         <ContactForm  >
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInputs placeholder="Your Email" type='text' value={email} name="from_name" onChange={handleEmailChange} onClick={handleEmailChange} required/>
+          <ContactInputs placeholder="Your Email*" type='text' value={email} name="from_name" onChange={handleEmailChange} onClick={handleEmailChange} required/>
           <p>{msg && email !== '' ?`${msg}`:" "}</p>
-          <ContactInputMessage placeholder="Message" value={IsMsg} rows="4" name="message"onChange={handleMsgChange} onClick={handleMsgChange} required />
+          <ContactInputMessage placeholder="Message*" value={IsMsg} rows="4" name="message"onChange={handleMsgChange} onClick={handleMsgChange} required />
        {disable?
      <Tooltip  open={tooltip}  title="Please refresh the page to resend the email!" arrow>
         <div>
         <ContactDisable type="submit" value="Send"
-         onMouseOver={()=>setTooltip(true)} onMouseLeave={()=>setTooltip(false)} onClick={handleDisabledButtonClick}/>
+         onMouseEnter={()=>setTooltip(true)}
+         onTouchStart={()=>setTooltip(true)} onTouchEnd ={()=>setTooltip(false)}
+         onMouseLeave={()=>setTooltip(false)} onClick={handleDisabledButtonClick}/>
           </div></Tooltip>   
        :
       <>{Progress?

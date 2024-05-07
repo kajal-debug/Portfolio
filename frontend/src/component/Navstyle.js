@@ -101,10 +101,11 @@ export const GithubButton = styled(LinkR)`
   display: flex;
   align-items: center;
   height: 70%;
+  margin:20%;
   border-radius: 20px;
   color: ${({ theme }) => theme.primary};
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 10px;
   font-weight: 500;
   font-size: 16px;
   transition: all 0.6s ease-in-out;
@@ -137,8 +138,8 @@ export const MobileIcon = styled.div`
     position: absolute;
     top: 0;
     right: 75px;
-    transform: translate(-100%, 60%);
-    font-size: 1.3rem;
+    transform: translate(-100%, 30%);
+    font-size: 1.8rem;
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
   }

@@ -23,9 +23,9 @@ function NavBar() {
             <NavItems>
                 {/* <Link className='NavLink' to="#home"  smooth>Home</Link>
                 <Link className='NavLink' to="#about"  smooth>About</Link> */}
-                <Link className='NavLink' to="#skill" smooth>Skill</Link>
+                <Link className='NavLink' to="#skill" smooth>Skills</Link>
                 <Link className='NavLink' to="#experience"  smooth>Experience</Link>
-                <Link className='NavLink'  to="#project" smooth>Project</Link>
+                <Link className='NavLink'  to="#project" smooth>Projects</Link>
                 <Link className='NavLink'  to="#contact" smooth>Contact</Link>
             </NavItems>
             <ButtonContainer>

@@ -48,7 +48,7 @@ export const ToggleButtonGroup = styled.div`
     font-size: 16px;
     border-radius: 12px;
     font-weight: 500;
-    margin: 22px 0px;
+    margin: 22px 16px;
     @media (max-width: 768px) {
         font-size: 12px;
     }
@@ -80,9 +80,10 @@ export const Divider = styled.div`
 export const CardContainer = styled.div`
    display: inline-block;
     justify-content: center;
+    padding:20px;
     align-items: center;  without display flex how to make same property
     // position:relative;
-    
+   
     .Header{
         color:#ffff;
          position:relative;

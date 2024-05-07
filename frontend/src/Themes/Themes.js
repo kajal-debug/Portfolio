@@ -13,8 +13,8 @@ export const darkTheme = {
     uparrow:{
         position: "fixed",
           color: "#686561",
-          bottom: '10px',
-          right: '40px',
+          bottom: '40px',
+          right: '30px',
           fontSize: '25px !important',
           cursor:"pointer",
           backgroundColor: "white",
